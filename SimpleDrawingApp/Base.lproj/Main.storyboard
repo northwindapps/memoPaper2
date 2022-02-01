@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="initial" id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleDrawingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhC-ps-Hdx">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="JIs-De-Qqb"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="9zI-QM-gnr">
+                                        <nil key="title"/>
+                                        <leftBarButtonItems>
+                                            <barButtonItem systemItem="camera" id="fYg-x0-Kkn">
+                                                <connections>
+                                                    <action selector="saveDrawingToCameraRoll:" destination="BYZ-38-t0r" id="iZc-aV-uNl"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Undo" style="plain" id="VQE-Z2-J9c">
+                                                <connections>
+                                                    <action selector="undo_action:" destination="BYZ-38-t0r" id="UE8-9o-RUs"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title=" NEXT" id="A0e-aO-5ma">
+                                                <connections>
+                                                    <action selector="clearCanvasAction:" destination="BYZ-38-t0r" id="tSy-pG-RGj"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </leftBarButtonItems>
+                                        <barButtonItem key="rightBarButtonItem" title="Line Break" id="IhB-hx-Bwo">
+                                            <connections>
+                                                <action selector="toogleFingerOrPencil:" destination="BYZ-38-t0r" id="qFn-ue-Nm7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Fr-4u-ueh">
+                                <rect key="frame" x="0.0" y="683" width="414" height="179"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Ze-Gq-WBQ">
+                                    <size key="itemSize" width="124" height="103"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hPI-CM-Xf9">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="179"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="E83-2E-BJN"/>
+                                        <constraint firstAttribute="height" constant="20" id="fPG-mQ-ZRw"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="OEu-FX-OoF" customClass="collectionCell" customModule="SimpleDrawingApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3N7-Ko-SEz">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Azm-cg-2cQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="60"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Azm-cg-2cQ" firstAttribute="leading" secondItem="3N7-Ko-SEz" secondAttribute="leading" id="BBm-ZQ-2fZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Azm-cg-2cQ" secondAttribute="trailing" id="FUr-kA-Jdc"/>
+                                                <constraint firstItem="Azm-cg-2cQ" firstAttribute="top" secondItem="3N7-Ko-SEz" secondAttribute="top" id="I2h-2p-9Jr"/>
+                                                <constraint firstAttribute="bottom" secondItem="Azm-cg-2cQ" secondAttribute="bottom" id="jZ2-gL-19X"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="120" height="60"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="Azm-cg-2cQ" id="jMy-yd-Yli"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="8bC-Xf-vdC" id="lbb-pP-wvp"/>
+                                    <outlet property="delegate" destination="8bC-Xf-vdC" id="103-oi-82U"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I94-Eq-x8i" customClass="Canvas2" customModule="SimpleDrawingApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="595"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VhC-ps-Hdx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0RN-ja-llf"/>
+                            <constraint firstItem="I94-Eq-x8i" firstAttribute="top" secondItem="VhC-ps-Hdx" secondAttribute="bottom" id="7Y2-Ty-SiI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Fr-4u-ueh" secondAttribute="trailing" id="85t-cp-lBN"/>
+                            <constraint firstItem="I94-Eq-x8i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bj8-Ss-j3c"/>
+                            <constraint firstItem="4Fr-4u-ueh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LQV-ZW-4Cx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Fr-4u-ueh" secondAttribute="bottom" id="M4B-7X-5jR"/>
+                            <constraint firstItem="4Fr-4u-ueh" firstAttribute="top" secondItem="I94-Eq-x8i" secondAttribute="bottom" id="ROF-Gx-4PO"/>
+                            <constraint firstItem="4Fr-4u-ueh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="XpI-Lx-sdb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I94-Eq-x8i" secondAttribute="trailing" id="atD-yd-bma"/>
+                            <constraint firstItem="VhC-ps-Hdx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fLd-F8-5Iq"/>
+                            <constraint firstItem="VhC-ps-Hdx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="so5-aq-RKT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="canvasView" destination="I94-Eq-x8i" id="IbO-wK-vtY"/>
+                        <outlet property="clearCanvasButton" destination="A0e-aO-5ma" id="j12-1C-ya5"/>
+                        <outlet property="myCollectionView" destination="4Fr-4u-ueh" id="DTp-nX-7Ui"/>
+                        <outlet property="pencilFingerButton" destination="IhB-hx-Bwo" id="kgG-uk-r3r"/>
+                        <outlet property="undoButton" destination="VQE-Z2-J9c" id="BpJ-6A-sCs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="zop-Yf-yyB">
+            <objects>
+                <viewController storyboardIdentifier="edit" id="qAD-Qx-XjL" customClass="EditViewController" customModule="SimpleDrawingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1a4-8M-Lbi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wU8-pO-nOi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="XjN-Qq-nax"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="Usb-hW-2y4">
+                                        <leftBarButtonItems>
+                                            <barButtonItem title="Save" id="LOX-H9-MR8">
+                                                <connections>
+                                                    <action selector="SaveAction:" destination="qAD-Qx-XjL" id="mRL-pm-vnw"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Delete" id="VOR-8E-Cbq">
+                                                <connections>
+                                                    <action selector="DeleteAction:" destination="qAD-Qx-XjL" id="krj-gw-Q4k"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </leftBarButtonItems>
+                                        <barButtonItem key="rightBarButtonItem" title="Back" id="sjc-sb-SlG">
+                                            <connections>
+                                                <action selector="BackAction:" destination="qAD-Qx-XjL" id="f5q-vf-pBI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEB-ya-zau">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R9E-eQ-qJg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="R9E-eQ-qJg" firstAttribute="bottom" secondItem="LEB-ya-zau" secondAttribute="bottom" id="0gD-Ps-z0j"/>
+                            <constraint firstItem="wU8-pO-nOi" firstAttribute="top" secondItem="R9E-eQ-qJg" secondAttribute="top" id="4xe-Wt-RPv"/>
+                            <constraint firstItem="LEB-ya-zau" firstAttribute="top" secondItem="wU8-pO-nOi" secondAttribute="bottom" id="9v2-eG-7KO"/>
+                            <constraint firstItem="LEB-ya-zau" firstAttribute="leading" secondItem="R9E-eQ-qJg" secondAttribute="leading" id="QUe-c1-bEL"/>
+                            <constraint firstItem="wU8-pO-nOi" firstAttribute="trailing" secondItem="R9E-eQ-qJg" secondAttribute="trailing" id="Wt8-bQ-fuJ"/>
+                            <constraint firstItem="wU8-pO-nOi" firstAttribute="leading" secondItem="R9E-eQ-qJg" secondAttribute="leading" id="gWz-cG-L7M"/>
+                            <constraint firstItem="R9E-eQ-qJg" firstAttribute="trailing" secondItem="LEB-ya-zau" secondAttribute="trailing" id="p4E-oe-QFJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="deleteButton" destination="VOR-8E-Cbq" id="KWJ-qB-aX3"/>
+                        <outlet property="scrollView" destination="LEB-ya-zau" id="cZN-wa-XEJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xHl-1Z-xAM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="231.8840579710145" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,15 @@
+
+/* Class = "UIBarButtonItem"; title = "NEXT"; ObjectID = "A0e-aO-5ma"; */
+"A0e-aO-5ma.title" = "Nächste";
+
+/* Class = "UIBarButtonItem"; title = "Line Break"; ObjectID = "IhB-hx-Bwo"; */
+"IhB-hx-Bwo.title" = "Zeilenumbruch";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "LOX-H9-MR8"; */
+"LOX-H9-MR8.title" = "Speichern";
+
+/* Class = "UIBarButtonItem"; title = "Delete"; ObjectID = "VOR-8E-Cbq"; */
+"VOR-8E-Cbq.title" = "Löschen";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "sjc-sb-SlG"; */
+"sjc-sb-SlG.title" = "Rückkehr";

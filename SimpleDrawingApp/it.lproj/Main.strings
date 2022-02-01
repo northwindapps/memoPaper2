@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; configuration.title = "Next"; ObjectID = "2fG-no-ifV"; */
+"2fG-no-ifV.configuration.title" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "2fG-no-ifV"; */
+"2fG-no-ifV.normalTitle" = "Button";
+
+/* Class = "UIBarButtonItem"; title = "Line Break"; ObjectID = "IhB-hx-Bwo"; */
+"IhB-hx-Bwo.title" = "Line Break";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "LOX-H9-MR8"; */
+"LOX-H9-MR8.title" = "Save";
+
+/* Class = "UIBarButtonItem"; title = "Delete"; ObjectID = "VOR-8E-Cbq"; */
+"VOR-8E-Cbq.title" = "Delete";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "sjc-sb-SlG"; */
+"sjc-sb-SlG.title" = "Back";
