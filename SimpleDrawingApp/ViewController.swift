@@ -237,6 +237,8 @@ class ViewController: UIViewController,  PKToolPickerObserver,UICollectionViewDe
         canvasView.min_x = 99999999.9
         canvasView.min_y = 99999999.9
         canvasView.clear()
+        myCollectionView.reloadData()
+        myCollectionView.scrollToNextItem()
     }
     
     @IBAction func undo_action(_ sender: Any) {
@@ -412,4 +414,19 @@ extension UIImage {
     draw(in: CGRect(origin: .zero, size: newSize))
     return UIGraphicsGetImageFromCurrentImageContext()
   }
+}
+extension UICollectionView {
+    func scrollToNextItem() {
+        let contentOffset = CGFloat(floor(self.contentOffset.x + self.bounds.size.width/2))
+        self.moveToFrame(contentOffset: contentOffset)
+    }
+
+    func scrollToPreviousItem() {
+        let contentOffset = CGFloat(floor(self.contentOffset.x - self.bounds.size.width/2))
+        self.moveToFrame(contentOffset: contentOffset)
+    }
+
+    func moveToFrame(contentOffset : CGFloat) {
+        self.setContentOffset(CGPoint(x: contentOffset, y: self.contentOffset.y), animated: true)
+    }
 }
